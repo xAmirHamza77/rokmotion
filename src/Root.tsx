@@ -112,7 +112,7 @@ export const RokmotionRoot: React.FC = () => {
         }}
         calculateMetadata={calculateRokmotionTutorialMetadata}
       />
-      <Composition id="BannerRokmotion" component={BannerRokmotion} durationInFrames={60} fps={30} width={1080} height={500} />
+      <Composition id="BannerRokmotion" component={BannerRokmotion} durationInFrames={60} fps={30} width={1080} height={280} />
       <Composition
         id="ThumbnailRokmotion"
         component={ThumbnailRokmotion}
