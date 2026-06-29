@@ -39,7 +39,8 @@
     "elevenlabs:test": "tsx scripts/elevenlabs/test-connection.ts",
     "voiceover": "tsx scripts/elevenlabs/generate-voiceover.ts",
     "import-assets": "tsx scripts/import-assets.ts",
-    "showcase:gifs": "bash scripts/render-showcase-gifs.sh"
+    "showcase:gifs": "bash scripts/render-showcase-gifs.sh",
+    "banner": "bash scripts/render-banner.sh"
   },
   "sideEffects": [
     "*.css"

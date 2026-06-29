@@ -10,6 +10,7 @@ import { PaperRokmotionStart } from "./PaperRokmotionStart";
 import { RokmotionTutorial } from "./RokmotionTutorial";
 import { UserVoiceoverVideo } from "./UserVoiceoverVideo";
 import { VideoToVideoEnhance } from "./VideoToVideoEnhance";
+import { BannerRokmotion } from "./showcase/BannerRokmotion";
 import {
   DataVizShowcase,
   GlassUIShowcase,
@@ -117,6 +118,7 @@ export const RokmotionRoot: React.FC = () => {
         }}
         calculateMetadata={calculateRokmotionTutorialMetadata}
       />
+      <Composition id="BannerRokmotion" component={BannerRokmotion} durationInFrames={60} fps={30} width={1080} height={500} />
       <Composition id="Showcase-PaperCraft" component={PaperCraftShowcase} durationInFrames={90} fps={30} width={640} height={360} />
       <Composition id="Showcase-NeonGrid" component={NeonGridShowcase} durationInFrames={90} fps={30} width={640} height={360} />
       <Composition id="Showcase-RetroWave" component={RetroWaveShowcase} durationInFrames={90} fps={30} width={640} height={360} />
