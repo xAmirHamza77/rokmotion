@@ -21,7 +21,10 @@ export const BannerRokmotion: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
 
-  const enter = spring({ frame, fps, config: { damping: 16, stiffness: 90 } });
+  const enter = Math.max(
+    0.15,
+    spring({ frame, fps, config: { damping: 16, stiffness: 90 } }),
+  );
   const pulse = interpolate(
     frame,
     [0, durationInFrames / 2, durationInFrames],
