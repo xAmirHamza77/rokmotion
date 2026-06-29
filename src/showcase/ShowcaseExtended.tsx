@@ -1,5 +1,6 @@
 import { ThemeIcon, type ThemeIconName } from "../components/ThemeIcons";
 import { loadFont } from "@remotion/google-fonts/Inter";
+import { WorldMapRoute } from "./WorldMapRoute";
 import {
   AbsoluteFill,
   Easing,
@@ -62,88 +63,6 @@ const ShowcaseCard: React.FC<{
         </div>
       </div>
     </AbsoluteFill>
-  );
-};
-
-const pointOnBezier = (
-  t: number,
-  p0: { x: number; y: number },
-  p1: { x: number; y: number },
-  p2: { x: number; y: number },
-  p3: { x: number; y: number },
-) => {
-  const u = 1 - t;
-  return {
-    x: u * u * u * p0.x + 3 * u * u * t * p1.x + 3 * u * t * t * p2.x + t * t * t * p3.x,
-    y: u * u * u * p0.y + 3 * u * u * t * p1.y + 3 * u * t * t * p2.y + t * t * t * p3.y,
-  };
-};
-
-const MapRouteScene: React.FC<{
-  from: { x: number; y: number; label: string };
-  to: { x: number; y: number; label: string };
-  progress: number;
-}> = ({ from: fromPoint, to: toPoint, progress }) => {
-  const c1 = { x: fromPoint.x + 80, y: fromPoint.y - 90 };
-  const c2 = { x: toPoint.x - 90, y: toPoint.y - 70 };
-  const pathD = `M ${fromPoint.x} ${fromPoint.y} C ${c1.x} ${c1.y} ${c2.x} ${c2.y} ${toPoint.x} ${toPoint.y}`;
-  const marker = pointOnBezier(progress, fromPoint, c1, c2, toPoint);
-  const dash = progress * 520;
-
-  return (
-    <svg width="100%" height="100%" viewBox="0 0 640 360" style={{ position: "absolute", inset: 0 }}>
-      <defs>
-        <radialGradient id="ocean" cx="50%" cy="50%" r="70%">
-          <stop offset="0%" stopColor="#b8dff5" />
-          <stop offset="100%" stopColor="#7ec8e8" />
-        </radialGradient>
-        <filter id="wc">
-          <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" seed="8" />
-          <feDisplacementMap in="SourceGraphic" scale="6" />
-        </filter>
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="3" result="b" />
-          <feMerge>
-            <feMergeNode in="b" />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-      </defs>
-      <rect width="640" height="360" fill="url(#ocean)" />
-      <ellipse cx="170" cy="170" rx="110" ry="70" fill="#8fd4a0" opacity="0.85" filter="url(#wc)" />
-      <ellipse cx="300" cy="145" rx="55" ry="40" fill="#9edfa8" opacity="0.9" filter="url(#wc)" />
-      <ellipse cx="500" cy="155" rx="95" ry="55" fill="#8fd4a0" opacity="0.85" filter="url(#wc)" />
-      <ellipse cx="420" cy="210" rx="40" ry="28" fill="#a8e6b4" opacity="0.8" filter="url(#wc)" />
-      <path
-        d={pathD}
-        fill="none"
-        stroke="rgba(74,144,217,0.25)"
-        strokeWidth="10"
-        strokeLinecap="round"
-      />
-      <path
-        d={pathD}
-        fill="none"
-        stroke="#4a90d9"
-        strokeWidth="4"
-        strokeLinecap="round"
-        strokeDasharray={`${dash} 520`}
-        filter="url(#glow)"
-      />
-      <circle cx={fromPoint.x} cy={fromPoint.y} r="14" fill="#e85d4c" opacity="0.25" />
-      <circle cx={fromPoint.x} cy={fromPoint.y} r="7" fill="#e85d4c" stroke="#fff" strokeWidth="2" />
-      <circle cx={toPoint.x} cy={toPoint.y} r="14" fill="#22c55e" opacity="0.25" />
-      <circle cx={toPoint.x} cy={toPoint.y} r="7" fill="#22c55e" stroke="#fff" strokeWidth="2" />
-      <g transform={`translate(${marker.x - 10}, ${marker.y - 10}) rotate(35)`}>
-        <path d="M4 18 L10 2 L16 18 Z" fill="#fff" stroke="#4a90d9" strokeWidth="1.5" />
-      </g>
-      <text x={fromPoint.x - 8} y={fromPoint.y + 28} fontSize="13" fontWeight="700" fill="#1e3a5f">
-        {fromPoint.label}
-      </text>
-      <text x={toPoint.x - 22} y={toPoint.y + 28} fontSize="13" fontWeight="700" fill="#1e3a5f">
-        {toPoint.label}
-      </text>
-    </svg>
   );
 };
 
@@ -557,11 +476,7 @@ export const WatercolorMapShowcase: React.FC = () => {
       subtitle="Travel animation with watercolor effects"
       bg="#d4ecf7"
     >
-      <MapRouteScene
-        from={{ x: 300, y: 138, label: "Paris" }}
-        to={{ x: 518, y: 148, label: "Tokyo" }}
-        progress={progress}
-      />
+      <WorldMapRoute progress={progress} fromLabel="Paris" toLabel="Tokyo" />
     </ShowcaseCard>
   );
 };
