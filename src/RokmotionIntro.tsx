@@ -166,7 +166,7 @@ const ScaffoldScene: React.FC = () => {
       easing: Easing.linear,
     }),
   );
-  const command = "git clone https://github.com/xAmir77/rokmotion.git";
+  const command = "git clone https://github.com/xAmirHamza77/rokmotion.git";
 
   return (
     <AbsoluteFill

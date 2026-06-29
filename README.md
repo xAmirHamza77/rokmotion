@@ -3,9 +3,9 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/xAmir77/rokmotion"><img src="https://img.shields.io/badge/Rokmotion-1.0-e85d4c?style=flat-square" alt="Rokmotion"></a>
+  <a href="https://github.com/xAmirHamza77/rokmotion"><img src="https://img.shields.io/badge/Rokmotion-1.0-e85d4c?style=flat-square" alt="Rokmotion"></a>
   <a href="https://youtu.be/FccxpsBw6S0"><img src="https://img.shields.io/badge/Demo-YouTube-red?style=flat-square&logo=youtube" alt="YouTube Demo"></a>
-  <a href="https://github.com/xAmir77/rokmotion"><img src="https://img.shields.io/badge/Open%20Source-GitHub-24292f?style=flat-square&logo=github" alt="GitHub"></a>
+  <a href="https://github.com/xAmirHamza77/rokmotion"><img src="https://img.shields.io/badge/Open%20Source-GitHub-24292f?style=flat-square&logo=github" alt="GitHub"></a>
   <img src="https://img.shields.io/badge/TypeScript-5.9-3178c6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript">
 </p>
 
@@ -322,7 +322,7 @@ https://www.youtube.com/watch?v=FccxpsBw6S0
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/xAmir77/rokmotion.git
+git clone https://github.com/xAmirHamza77/rokmotion.git
 cd rokmotion
 ```
 
@@ -462,7 +462,7 @@ npx rokmotion render VideoToVideoEnhance out/myedit.mp4 \
 ## Quick start — recreate the demo video
 
 ```bash
-git clone https://github.com/xAmir77/rokmotion.git
+git clone https://github.com/xAmirHamza77/rokmotion.git
 cd rokmotion
 npm install
 cp .env.example .env          # add ElevenLabs key
@@ -537,4 +537,4 @@ npx tsc --noEmit               # Typecheck
 
 ## License
 
-Rokmotion is open source. See the [GitHub repo](https://github.com/xAmir77/rokmotion) for source and license terms.
+Rokmotion is open source. See the [GitHub repo](https://github.com/xAmirHamza77/rokmotion) for source and license terms.

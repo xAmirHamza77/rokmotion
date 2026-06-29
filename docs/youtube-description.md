@@ -26,19 +26,19 @@ No After Effects. No timeline scrubbing. Just type /rokmotion, describe your vid
 ━━━━━━━━━━━━━━━━━━━━━━
 
 ⭐ GitHub (free & open source):
-https://github.com/xAmir77/rokmotion
+https://github.com/xAmirHamza77/rokmotion
 
 📥 Download demo MP4:
-https://github.com/xAmir77/rokmotion/raw/main/demos/PaperRokmotionStart-demo.mp4
+https://github.com/xAmirHamza77/rokmotion/raw/main/demos/PaperRokmotionStart-demo.mp4
 
 📖 Rokmotion repo:
-https://github.com/xAmir77/rokmotion
+https://github.com/xAmirHamza77/rokmotion
 
 ━━━━━━━━━━━━━━━━━━━━━━
 ⚡ QUICK INSTALL
 ━━━━━━━━━━━━━━━━━━━━━━
 
-git clone https://github.com/xAmir77/rokmotion.git
+git clone https://github.com/xAmirHamza77/rokmotion.git
 cd rokmotion
 npm install
 cp .env.example .env
@@ -74,7 +74,7 @@ Perfect for developers, creators, and anyone who wants precise motion graphics w
 ━━━━━━━━━━━━━━━━━━━━━━
 
 👍 Like & subscribe if this helped you
-⭐ Star the repo: https://github.com/xAmir77/rokmotion
+⭐ Star the repo: https://github.com/xAmirHamza77/rokmotion
 💬 Questions? Open a GitHub issue
 
 #Rokmotion #MotionGraphics #ProgrammaticVideo #AIVideo #ElevenLabs #OpenSource #PaperAnimation #DeveloperTools #VideoEditing #TypeScript #Coding #AIVoiceover
