@@ -6,12 +6,16 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@elevenlabs/elevenlabs-js": "2.20.0",
     "@remotion/cli": "4.0.484",
+    "@remotion/google-fonts": "^4.0.484",
+    "@remotion/tailwind-v4": "4.0.484",
+    "dotenv": "16.4.7",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "remotion": "4.0.484",
-    "@remotion/tailwind-v4": "4.0.484",
-    "tailwindcss": "4.0.0"
+    "tailwindcss": "4.0.0",
+    "zod": "4.3.6"
   },
   "devDependencies": {
     "@remotion/eslint-config-flat": "4.0.484",
@@ -19,13 +23,18 @@
     "@types/web": "0.0.166",
     "eslint": "9.19.0",
     "prettier": "3.8.1",
+    "tsx": "4.19.3",
     "typescript": "5.9.3"
   },
   "scripts": {
     "dev": "remotion studio",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src && tsc",
+    "render": "remotion render",
+    "elevenlabs:test": "tsx scripts/elevenlabs/test-connection.ts",
+    "voiceover": "tsx scripts/elevenlabs/generate-voiceover.ts",
+    "import-assets": "tsx scripts/import-assets.ts"
   },
   "sideEffects": [
     "*.css"

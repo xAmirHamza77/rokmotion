@@ -1,54 +1,53 @@
-# Remotion video
+# Rokmotion
 
-<p align="center">
-  <a href="https://github.com/remotion-dev/logo">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-dark.apng">
-      <img alt="Animated Remotion Logo" src="https://github.com/remotion-dev/logo/raw/main/animated-logo-banner-light.gif">
-    </picture>
-  </a>
-</p>
+Programmatic video generation with [Remotion](https://www.remotion.dev) — built for use with Grok via the `rokmotion` skill.
 
-Welcome to your Remotion project!
+## Video modes
+
+1. **User voiceover** — sync visuals to your recorded audio
+2. **ElevenLabs + script** — AI narration with alignment-based scene timing
+3. **Video to video** — edit a source video, add animated overlays, optional PiP
+
+## Setup
+
+```bash
+npm install
+cp .env.example .env   # add your ElevenLabs API key (mode 2 only)
+```
 
 ## Commands
 
-**Install Dependencies**
-
-```console
-npm i
+```bash
+npm run dev              # Remotion Studio preview
+npm run render           # render a composition
+npm run voiceover -- <CompositionId> [script text]
+npm run import-assets -- --mode user-voiceover --project <id> --audio <path>
+npm run import-assets -- --mode video-to-video --project <id> --video <path>
+npm run elevenlabs:test  # verify ElevenLabs API key
 ```
 
-**Start Preview**
+## Compositions
 
-```console
-npm run dev
+| ID | Description |
+|----|-------------|
+| `PaperRokmotionStart` | Paper-animation tutorial (ElevenLabs synced) |
+| `RokmotionTutorial` | Motion graphics tutorial |
+| `UserVoiceoverVideo` | Template for user-provided audio |
+| `VideoToVideoEnhance` | Template for video-to-video editing |
+
+```bash
+npx remotion render PaperRokmotionStart out/video.mp4
 ```
 
-**Render video**
+## Environment variables
 
-```console
-npx remotion render
-```
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `ELEVENLABS_API_KEY` | Mode 2 only | Get at [elevenlabs.io](https://elevenlabs.io) |
+| `ELEVENLABS_VOICE_ID` | Optional | Default: Bella (free-tier compatible) |
 
-**Upgrade Remotion**
-
-```console
-npx remotion upgrade
-```
-
-## Docs
-
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-
-## Help
-
-We provide help on our [Discord server](https://discord.gg/6VzzNDwUwV).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/remotion-dev/remotion/issues/new).
+Never commit `.env` — it is gitignored.
 
 ## License
 
-Note that for some entities a company license is needed. [Read the terms here](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).
+Remotion is free for teams of up to 3. See [Remotion license](https://github.com/remotion-dev/remotion/blob/main/LICENSE.md).

@@ -2,6 +2,19 @@ node_modules
 dist
 .DS_Store
 .env
+.env.local
+.env.*.local
 
-# Ignore the output video from Git but not videos you import into src/.
+# Rendered videos
 out
+
+# Generated / user-uploaded media (keep repo lightweight)
+public/uploads/
+public/voiceover/
+public/*.mp3
+public/*.aiff
+public/*.mp4
+public/*.wav
+
+# Keep public/ folder structure
+!public/.gitkeep
